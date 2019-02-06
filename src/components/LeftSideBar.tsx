@@ -1,22 +1,23 @@
 import * as React from 'react';
 
-// interface Props{
-//   property?: string
+// interface Props {
+//    property?: string
 // }
 //
 // interface State{
 //   property?: string
 // }
 
-export default class Header extends React.Component<{}, {}>{
+export default class LeftSideBar extends React.Component<{}, {}>{
   constructor(props: {}){
     super(props)
+
   }
 
   render(){
     return(
       <div>
-       this is header
+       left side bar
       </div>
     )
   }

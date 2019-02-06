@@ -6,11 +6,10 @@ module.exports = {
     },
 
     devtool: "source-map",
-
+    mode: "development",
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"]
     },
-
     module: {
         rules: [
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
@@ -18,12 +17,16 @@ module.exports = {
             {
               test: /\.scss$/,
               use: [
-                  "style-loader", 
+                  "style-loader",
                   "css-loader",
                   "sass-loader"
               ]
            }
         ]
+    },
+    devServer: {
+      port: 3000,
+      inline:true,
     },
 
     // When importing a module whose path matches one of the following, just

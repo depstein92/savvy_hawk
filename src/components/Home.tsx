@@ -1,17 +1,28 @@
-import React from 'react';
+import * as React from 'react';
+import Header from './Header';
+import LeftSideBar from './LeftSideBar';
+import BankAccounts from './BankAccounts';
 
+// interface Props{
+//   property?: string
+// }
+//
+// interface State{
+//   property?: string
+// }
 
-class Home extends React.Component{
-  constructor(props){
+export default class Home extends React.Component<{}, {}>{
+  constructor(props: {}){
     super(props)
   }
 
-  render(
+  render(){
     return(
       <div>
+       <Header />
+       <BankAccounts />
+       <LeftSideBar />
       </div>
     )
-  )
+  }
 }
-
-export default class Home;

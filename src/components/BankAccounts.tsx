@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 // interface Props{
-//   property?: string
+//  property?: string
 // }
 //
 // interface State{
-//   property?: string
+//  property?: string
 // }
 
-export default class Header extends React.Component<{}, {}>{
+export default class BankAccounts extends React.Component<{}, {}>{
   constructor(props: {}){
     super(props)
   }
@@ -16,7 +16,7 @@ export default class Header extends React.Component<{}, {}>{
   render(){
     return(
       <div>
-       this is header
+
       </div>
     )
   }
