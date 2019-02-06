@@ -1,0 +1,5 @@
+{
+    "parser": "eslint-plugin-typescript/parser",
+    "plugins": ["typescript"],
+    "extends": ["plugin:typescript/recommended"]
+}
