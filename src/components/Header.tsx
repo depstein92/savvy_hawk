@@ -1,13 +1,5 @@
 import * as React from 'react';
 
-// interface Props{
-//   property?: string
-// }
-//
-// interface State{
-//   property?: string
-// }
-
 export default class Header extends React.Component<{}, {}>{
   constructor(props: {}){
     super(props)
@@ -16,7 +8,19 @@ export default class Header extends React.Component<{}, {}>{
   render(){
     return(
       <div>
-       this is header
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">
+            Default
+            </span>
+          </div>
+           <input
+            type="text"
+            className="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
+            />
+       </div>
       </div>
     )
   }

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack"
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +27,7 @@
     "typescript": "^3.1.6",
     "typescript-eslint-parser": "^22.0.0",
     "webpack": "^4.29.1",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
   }
 }
