@@ -1,0 +1,59 @@
+.heading{
+  display: flex;
+  border: 2px solid;
+  align-items: center;
+
+  &__legal-practice{
+
+    font-variant-caps: all-small-caps;
+    font-size: 20px;
+    margin-left: 2% !important;
+
+    strong{
+      font-weight: bolder;
+    }
+
+    span{
+
+    }
+  }
+
+  .input-group{
+    margin-bottom: 0rem !important;
+  }
+  input{
+    background-color: transparent;
+    border: none;
+    align-self: baseline;
+    margin-top: 9px;
+    margin-bottom: -30px;
+  }
+
+  i{
+    margin-top: 19px;
+    margin-right: -7px;
+    margin-left: 30px;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+      outline: none;
+  }
+
+  .fa-user-circle-o{
+    color: gray;
+  }
+
+  &__notifications{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height: 30px;
+    background-color: blanched;
+    width: 20%;
+    margin-right: 5%;
+  }
+}

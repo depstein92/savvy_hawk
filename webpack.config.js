@@ -22,6 +22,11 @@ module.exports = {
                   "css-loader",
                   "sass-loader"
               ]
+           },
+           {
+             test: /\.tsx?$/,
+             include: /node_modules/,
+             use: ['react-hot-loader/webpack'],
            }
         ]
     },

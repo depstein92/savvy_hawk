@@ -1,0 +1,16 @@
+.left-sidebar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 5%;
+  height: 93vh;
+  border: 1px solid;
+
+  div{
+    margin-bottom: 8%;
+    &:first-child{
+      margin-top: 30%;
+    }
+  }
+}
