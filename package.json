@@ -14,6 +14,7 @@
     "@types/react-dom": "^16.0.11",
     "css-loader": "^2.1.0",
     "react": "^16.7.0",
+    "react-anime": "^2.2.0",
     "react-dom": "^16.7.0",
     "react-hot-loader": "^4.6.5",
     "webpack": "^4.29.1"

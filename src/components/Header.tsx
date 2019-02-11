@@ -1,11 +1,19 @@
 import * as React from 'react';
 
-export default class Header extends React.Component<{}, {}>{
-  constructor(props: {}){
+
+interface Props{
+  openNotifications?: any;
+}
+
+export default class Header extends React.Component<Props, {}>{
+  constructor(props: Props){
     super(props)
   }
 
+  openNotifications = () => this.props.openNotifications();
+
   render(){
+
     return(
       <div className="heading">
         <div className="heading__legal-practice">
@@ -13,17 +21,19 @@ export default class Header extends React.Component<{}, {}>{
           <span>Practice</span>
         </div>
         <div className="input-group mb-3">
-          <div className="input-group">
-           <i className="fas fa-search"></i>
-           <input
-             type="text"
-             class="form-control"
-             placeholder="Search"
-            />
-           </div>
-       </div>
+        <span className="input-group-addon">
+          <i className="fa fa-search"></i>
+        </span>
+         <input
+          type="text"
+          className="form-control"
+          placeholder="Search"
+          aria-label="Search"
+          aria-describedby="basic-addon2"
+          />
+        </div>
        <div className="heading__notifications">
-        <div>
+        <div onClick={this.openNotifications}>
           <i className="far fa-bell"></i>
          </div>
         <div>

@@ -2,17 +2,32 @@ import * as React from 'react';
 import Header from './Header';
 import LeftSideBar from './LeftSideBar';
 import BankAccounts from './BankAccounts';
+import Notifications from './Notifications';
 
-export default class Home extends React.Component<{}, {}>{
+interface State {
+  notifications: boolean;
+}
+
+export default class Home extends React.Component<{}, State>{
   constructor(props: {}){
     super(props)
+
+    this.state = { notifications: false }
+  }
+
+  openNotifications = () => {
+    this.setState({
+      notifications: true
+    });
   }
 
   render(){
+    console.log('state in home', this.state.notifications)
     return(
       <div>
-       <Header />
+       <Header openNotifications={this.openNotifications} />
        <BankAccounts />
+       <Notifications notifications={this.state.notifications} />
        <LeftSideBar />
       </div>
     )
