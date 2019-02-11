@@ -3,6 +3,7 @@ import Anime from 'react-anime';
 
 interface State{
   openNotif: boolean;
+  closeNotif: boolean;
 }
 
 interface Props{
@@ -14,41 +15,37 @@ export default class Notifications extends React.Component<Props, State>{
     super(props)
 
     this.state = {
-      openNotif: this.props.notifications
+      openNotif: this.props.notifications,
+      closeNotif: false
     }
   }
 
   static getDerivedStateFromProps(props, state){
-    if(state.openNotif !== props.notifications){
-      console.log('getDerived', props)
+    if(props.notifications !== state.openNotif){
       return {
-       openNotif: props.notifications
-      };
-    };
-    return null;
+       openNotif: props.notifications,
+       closeNotif: true
+     }
+   } else if(state.closeNotif === false){
+     return {
+       openNotif: false
+     }
+   }
   }
+
 
   transitionClose = () => {
-    this.setState({
-      openNotif: false
-    })
-  }
-
-  transitionOpen = () => {
    this.setState({
-     openNotif: true
-   })
+     closeNotif: false
+   });
   }
 
   openNotifications = () => {
     return(
       <div className="notifications" ref={"notifications"}>
         <div onClick={this.transitionClose}>
-         I am open
+         Exit
         </div>
-         <div onClick={this.transitionOpen} className="notification">
-           hello
-         </div>
       </div>
     )
   }
@@ -59,20 +56,17 @@ export default class Notifications extends React.Component<Props, State>{
         <div onClick={this.transitionClose}>
          I am closed
         </div>
-         <div onClick={this.transitionOpen} className="notification">
-           hello
-         </div>
       </div>
     )
   }
 
   render(){
-    console.log('props in NOtifications', this.props.notifications);
-    const { openNotif } = this.state;
-    console.log('state in notifications', this.state.openNotif)
+    const { openNotif, closeNotif } = this.state;
+    console.log('openNotif', this.state.openNotif);
+    console.log('closeNotif', this.state.closeNotif);
     return(
       <div>
-       { this.props.notifications ? this.openNotifications() : this.closeNotificatons() }
+       { openNotif && closeNotif ? this.openNotifications() : this.closeNotificatons() }
       </div>
     )
   }

@@ -22,7 +22,6 @@ export default class Home extends React.Component<{}, State>{
   }
 
   render(){
-    console.log('state in home', this.state.notifications)
     return(
       <div>
        <Header openNotifications={this.openNotifications} />
