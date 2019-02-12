@@ -7,7 +7,7 @@ interface State{
 }
 
 interface Props{
-  notifications: boolean;
+  notifications?: boolean;
 }
 
 export default class Notifications extends React.Component<Props, State>{
@@ -43,27 +43,45 @@ export default class Notifications extends React.Component<Props, State>{
   openNotifications = () => {
     return(
       <div className="notifications" ref={"notifications"}>
-        <div onClick={this.transitionClose}>
-         Exit
+        <div className="notifications__heading">
+         <div className="notifications__heading--title">
+           Notifications
+         </div>
+         <i
+          className="fas fa-window-close"
+          onClick={this.transitionClose}></i>
         </div>
+        <div>
+          <ul className="list-group">
+            <li className="list-group-item">
+            Cras justo odio
+            </li>
+            <li className="list-group-item">
+            Dapibus ac facilisis in
+            </li>
+            <li className="list-group-item">
+            Morbi leo risus
+            </li>
+            <li className="list-group-item">
+            Porta ac consectetur ac
+            </li>
+            <li className="list-group-item">
+            Vestibulum at eros
+            </li>
+         </ul>
+       </div>
       </div>
     )
   }
 
   closeNotificatons = () => {
     return(
-      <div>
-        <div onClick={this.transitionClose}>
-         I am closed
-        </div>
-      </div>
+      <div />
     )
   }
 
   render(){
     const { openNotif, closeNotif } = this.state;
-    console.log('openNotif', this.state.openNotif);
-    console.log('closeNotif', this.state.closeNotif);
     return(
       <div>
        { openNotif && closeNotif ? this.openNotifications() : this.closeNotificatons() }

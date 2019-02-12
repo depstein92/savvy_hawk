@@ -12,7 +12,9 @@ export default class Home extends React.Component<{}, State>{
   constructor(props: {}){
     super(props)
 
-    this.state = { notifications: false }
+    this.state = {
+      notifications: false
+    }
   }
 
   openNotifications = () => {

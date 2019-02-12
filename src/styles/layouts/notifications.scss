@@ -1,8 +1,41 @@
 .notifications{
-  background-color: aquamarine;
+  background-color: white;
   position: absolute;
   top: 95px;
   right: 0;
   width: 30%;
   height: 100vh;
+  border: 1px solid;
+  overflow-y: scroll;
+  direction: rtl;
+
+
+  &__heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 10px;
+    background-color: rgb(211,211,211);
+    direction: ltr;
+    padding: 10px 10px;
+
+
+    &--title{
+      margin-right: auto;
+      font-weight: 600;
+      font-variant-caps: all-small-caps;
+      font-size: 20px;
+    }
+
+    i{
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+
+  .list-group{
+   transform: translateX(20px) translateY(20px);
+  }
 }
