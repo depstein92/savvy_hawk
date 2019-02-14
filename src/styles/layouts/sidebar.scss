@@ -17,6 +17,36 @@
     }
   }
 
+  &__calender-popover{
+    position: absolute;
+    left: 55px;
+    top: 60px;
+    border: 1px solid #CDCDCD;
+    background-color: white;
+    width: 240px;
 
+    div{
+      padding-left: 20px;
+      margin-bottom: 3%;
 
+      &:first-child{
+        padding-top: 15px;
+      }
+    }
+
+    .seperate-link{
+      border-top: 1px solid #CDCDCD;
+      padding: 5% 0 3% 8%;
+    }
+  }
+
+  &__calender-container{
+    width: 100%;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    &:hover{
+      background-color:  #CDCDCD;
+    }
+  }
 }
