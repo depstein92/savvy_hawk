@@ -17,19 +17,15 @@ export default class Home extends React.Component<{}, State>{
     }
   }
 
-  openNotifications = () => {
-    this.setState({
-      notifications: true
-    });
-  }
-
+  openNotifications = () => this.setState({ notifications: true });
+  
   render(){
     return(
       <div>
        <Header openNotifications={this.openNotifications} />
        <BankAccounts />
        <Notifications notifications={this.state.notifications} />
-       <LeftSideBar />
+       <LeftSideBar notifications={this.state.notifications} />
       </div>
     )
   }

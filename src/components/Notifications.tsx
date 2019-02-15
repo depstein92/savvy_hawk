@@ -33,12 +33,7 @@ export default class Notifications extends React.Component<Props, State>{
    }
   }
 
-
-  transitionClose = () => {
-   this.setState({
-     closeNotif: false
-   });
-  }
+  transitionClose = () => this.setState({ closeNotif: false });
 
   openNotifications = () => {
     return(
