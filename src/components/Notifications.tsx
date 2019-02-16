@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Anime from 'react-anime';
 
 interface State{
   openNotif: boolean;
@@ -20,7 +19,7 @@ export default class Notifications extends React.Component<Props, State>{
     }
   }
 
-  static getDerivedStateFromProps(props, state){
+  static getDerivedStateFromProps(props: Props, state: State){
     if(props.notifications !== state.openNotif){
       return {
        openNotif: props.notifications,
@@ -37,7 +36,11 @@ export default class Notifications extends React.Component<Props, State>{
 
   openNotifications = () => {
     return(
-      <div className="notifications" ref={"notifications"}>
+      <div
+        className="notifications"
+        ref={"notifications"}
+        data-tag="open-notifications"
+        >
         <div className="notifications__heading">
          <div className="notifications__heading--title">
            Notifications
@@ -71,7 +74,7 @@ export default class Notifications extends React.Component<Props, State>{
 
   closeNotificatons = () => {
     return(
-      <div />
+      <div data-tag="close-notifications" />
     )
   }
 
