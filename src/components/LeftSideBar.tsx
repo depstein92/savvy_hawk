@@ -55,32 +55,31 @@ export default class LeftSideBar extends React.Component<Props, State>{
    const { isMenuExpanded, isPopoverVisible, isMenuClosed } = this.state;
     return(
       <div className={
-           isMenuExpanded ?
            "left-sidebar--expanded"
            :
            "left-sidebar"
            }>
-           <div>
-      { isPopoverVisible ? this.Popover : null }
-      {
-        isMenuExpanded  ?
-          <i
-           onClick={this.closeMenu}
-           className="fas fa-arrow-left"></i>
-          :
-          <i className="fas fa-bars"></i>
-      }
-         </div>
+        <div>
+        { isPopoverVisible ? this.Popover : null }
+        {
+          isMenuExpanded  ?
+            <i
+             onClick={this.closeMenu}
+             className="fas fa-arrow-left"></i>
+            :
+            <i className="fas fa-bars"></i>
+        }
+        </div>
          <div>
-      {
-        isMenuExpanded ?
-           <div>
-             <i className="fas fa-home"></i>
-             <div>Dashboard</div>
-           </div>
-           :
-           <i className="fas fa-home"></i>
-      }
+          {
+            isMenuExpanded ?
+               <div>
+                 <i className="fas fa-home"></i>
+                 <div>Dashboard</div>
+               </div>
+               :
+               <i className="fas fa-home"></i>
+          }
          </div>
       {
         isMenuExpanded ?

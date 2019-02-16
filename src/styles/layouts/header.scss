@@ -20,6 +20,8 @@
     margin-bottom: 0rem !important;
     font-size: 1rem;
     width: 80%;
+    margin-left: 60px;
+    transform: translateY(-11%);
   }
 
   input{
@@ -27,11 +29,14 @@
     border: none;
     align-self: baseline;
     margin-top: 9px;
+    background-color: #328d9b;
   }
 
   input::placeholder {
     color: white;
     background-color: $ternary-color;
+    transform: translateX(20px);
+    font-size: 15px;
 
     &:hover{
       cursor: pointer;
@@ -43,16 +48,29 @@
     margin-right: -7px;
     margin-left: 30px;
     background-color: $ternary-color;
+
     &:hover{
       cursor: pointer;
     }
+  }
+
+  //searchbar icon
+  i[data-rotate=rotate]{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    z-index: 1;
+    position: absolute;
+    left: -20px;
   }
 
   input:focus,
   select:focus,
   textarea:focus,
   button:focus {
-      outline: none;
+    outline: none;
   }
 
   .fa-user-circle-o{
@@ -66,13 +84,11 @@
     flex-direction: row;
     height: 30px;
     background-color: blanched;
-    margin-right: 5%;
 
     i{
       &:hover{
         cursor: pointer;
       }
     }
-
   }
 }

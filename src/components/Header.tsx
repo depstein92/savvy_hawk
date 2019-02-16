@@ -22,7 +22,10 @@ export default class Header extends React.Component<Props, {}>{
         </div>
         <div className="input-group mb-3">
         <span className="input-group-addon">
-          <i className="fa fa-search"></i>
+          <i
+           className="fa fa-search"
+           data-rotate="rotate">
+          </i>
         </span>
          <input
           type="text"
@@ -33,7 +36,8 @@ export default class Header extends React.Component<Props, {}>{
           />
         </div>
        <div className="heading__notifications">
-        <div onClick={this.openNotifications}>
+        <div onClick={this.openNotifications}
+             data-notification="notification">
           <i className="far fa-bell"></i>
          </div>
         <div>
