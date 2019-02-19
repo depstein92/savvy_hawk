@@ -1,7 +1,7 @@
 import * as React from "react";
+import CalendarLink from './CalendarLink';
 
 interface State {
-  isPopoverVisible: boolean;
   isMenuExpanded: boolean;
   isMenuClosed: boolean;
 }
@@ -15,36 +15,15 @@ export default class LeftSideBar extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      isPopoverVisible: false,
       isMenuExpanded: false,
       isMenuClosed: true
     };
   }
 
-  openPopOver = () => this.setState({ isPopoverVisible: true });
-  closePopOver = () => this.setState({ isPopoverVisible: false });
   closeMenu = () => this.setState({ isMenuClosed: false });
 
-  Popover = (
-    <div
-      onMouseOut={this.closePopOver}
-      className="left-sidebar__calender-popover">
-      <div>Action</div>
-      <div>Another Action</div>
-      <div>Something Else here</div>
-      <div className="seperate-link">
-        <span>Seperate Link</span>
-      </div>
-    </div>
-  );
-
   static getDerivedStateFromProps(props: Props, state: State) {
-    if(state.isPopoverVisible){
-        return {
-          isMenuClosed: true,
-          isMenuExpanded: false
-        };
-    } else if(state.isMenuClosed === false){
+   if(state.isMenuClosed === false){
       console.log('I have been triggered');
         return {
           isMenuExpanded: false,
@@ -60,15 +39,11 @@ export default class LeftSideBar extends React.Component<Props, State> {
   }
 
   render() {
-    const { isMenuExpanded, isPopoverVisible, isMenuClosed } = this.state;
-    console.log('isMenuExpanded', isMenuExpanded);
-    console.log('isPopoverVisible', isPopoverVisible);
-    console.log('isMenuClosed', isMenuClosed);
-    console.log('------------------------------------')
+    const { isMenuExpanded, isMenuClosed } = this.state;
     return (
       <div className={isMenuExpanded ? "left-sidebar--expanded" : "left-sidebar"}>
         <div>
-          {isPopoverVisible ? this.Popover : null}
+
           {isMenuExpanded ? (
             <i onClick={this.closeMenu} className="fas fa-arrow-left" />
           ) : (
@@ -91,12 +66,7 @@ export default class LeftSideBar extends React.Component<Props, State> {
             <div>Schedule</div>
           </div>
         ) : (
-          <div
-            className="left-sidebar__calender-container"
-            onMouseOver={this.openPopOver}
-          >
-            <i className="fa fa-calendar" aria-hidden="true" />
-          </div>
+          <CalendarLink />
         )}
         <div>
           {isMenuExpanded ? (

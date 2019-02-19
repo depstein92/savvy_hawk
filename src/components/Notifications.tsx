@@ -6,7 +6,7 @@ interface State{
 }
 
 interface Props{
-  notifications?: boolean;
+  notifications: boolean;
 }
 
 export default class Notifications extends React.Component<Props, State>{
