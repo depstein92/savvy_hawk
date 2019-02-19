@@ -45,7 +45,7 @@ describe('<CalanderLink />', () => {
   test('popover renders on hover', () => {
     const wrapper = setup();
     const lengthBeforeStateChange = wrapper.html().length;
-    
+
     wrapper.setState({ isPopoverVisible: true });
 
     expect(lengthBeforeStateChange).toBeLessThan(wrapper.html().length);
@@ -62,10 +62,29 @@ describe('<LeftSideBar />', () => {
   }
 
   test('state changes on prop change', () => {
+    const defaultState = { isMenuClosed: true, isMenuExpanded: false }
+    const updatedProps = { notifications: true }
+    const wrapper = setup(updatedProps, defaultState);
+
+    const update = LeftSideBar.getDerivedStateFromProps(updatedProps, defaultState);
+
+    expect(update).toEqual({
+      isMenuExpanded: true,
+      isMenuClosed: false
+    });
+  });
+
+  test('menu expands on prop change', () => {
+    const defaultState = { isMenuClosed: true, isMenuExpanded: false }
+    const updatedProps = { notifications: true }
     const wrapper = setup();
 
+    expect(wrapper.hasClass('left-sidebar'));
 
+    const upadtedComponent = setup(updatedProps, defaultState);
+    const update = LeftSideBar.getDerivedStateFromProps(updatedProps, defaultState);
 
+    expect(wrapper.hasClass('left-sidebar--expanded'));
   })
 
 });
